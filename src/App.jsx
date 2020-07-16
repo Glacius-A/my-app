@@ -1,5 +1,5 @@
 import React from 'react';
-import moviesData from ""
+import moviesData from "moviesData"
 
 function App() {
   return
