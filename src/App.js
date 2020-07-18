@@ -1,15 +1,7 @@
 import React from 'react';
 import moviesData from '../src/moviesData';
+import MovieItem from './MovieItem';
 
-function removeMovie(movie) {
-  const updateMovies = this.state.movies.filter(function (item) {
-    return item.id !== movie.id
-  });
-  console.log(updateMovies);
-  this.setState({
-    movies: updateMovies
-  });
-};
 
 class App extends React.Component {
   constructor() {
@@ -18,13 +10,21 @@ class App extends React.Component {
       movies: moviesData
     };
   }
+
+  removeMovie = movie => {
+    const updateMovies = this.state.movies.filter(function (item) {
+      return item.id !== movie.id
+    });
+    console.log(updateMovies);
+    this.setState({
+      movies: updateMovies
+    });
+  };
+
   render() {
     console.log(this);
     return (<div>{this.state.movies.map(movie => {
-      return <div>
-        <p>{movie.title}</p>
-        <button onClick={removeMovie.bind(this, movie)}> delet </button>
-      </div>
+      return <MovieItem key={movie.id} movie={movie} removeMovie={this.removeMovie} />
     })
     }
     </div >
