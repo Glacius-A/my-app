@@ -20,7 +20,7 @@ const MovieItem = props => {
                   <p className="mb-0">Rating: {movie.vote_average}</p>
                   <div>
                      <button onClick={removeMovie.bind(this, props.movie)} className="btn btn-secondary"> delete movie </button>
-                     <button type="button" className="btn btn-secondary">Will Watch</button>
+                     <button type="button" className="btn btn-secondary ml-2">Will Watch</button>
                   </div>
                </div>
             </div>
