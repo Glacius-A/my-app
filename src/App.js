@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: moviesData
+      movies: moviesData,
+      moviesWillWatch: []
     };
   }
 
@@ -19,6 +20,10 @@ class App extends React.Component {
     this.setState({
       movies: updateMovies
     });
+  };
+
+  addMovieToWillWatch = movie => {
+
   };
 
   render() {
@@ -36,6 +41,7 @@ class App extends React.Component {
                       <MovieItem
                         movie={movie}
                         removeMovie={this.removeMovie}
+                        addMovieToWillWatch={this.addMovieToWillWatch}
                       />
                     </div>)
                 })
@@ -45,8 +51,8 @@ class App extends React.Component {
           </div>
           <div className="col-3">
             <p>
-              will watch
-              </p>
+              will watch: {this.state.moviesWillWatch.length}
+            </p>
           </div>
         </div>
       </div >

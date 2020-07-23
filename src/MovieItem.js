@@ -1,7 +1,7 @@
 import React from "react";
 
 const MovieItem = props => {
-   const { movie, removeMovie } = props;
+   const { movie, removeMovie, addMovieToWillWatch } = props;
    console.log(props);
    return (
       <div >
@@ -19,8 +19,8 @@ const MovieItem = props => {
                <div className="d-flex justify-content-between align-items-center">
                   <p className="mb-0">Rating: {movie.vote_average}</p>
                   <div>
-                     <button onClick={removeMovie.bind(this, props.movie)} className="btn btn-secondary"> delete movie </button>
-                     <button type="button" className="btn btn-secondary ml-2">Will Watch</button>
+                     <button onClick={removeMovie.bind(this, movie)} className="btn btn-secondary"> delete movie </button>
+                     <button onClick={addMovieToWillWatch.bind(null, movie)} type="button" className="btn btn-secondary ml-2">Will Watch</button>
                   </div>
                </div>
             </div>
