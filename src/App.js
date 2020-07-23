@@ -16,18 +16,28 @@ class App extends React.Component {
     const updateMovies = this.state.movies.filter(function (item) {
       return item.id !== movie.id
     });
-    console.log(updateMovies);
+    // console.log(updateMovies);
     this.setState({
       movies: updateMovies
     });
   };
 
   addMovieToWillWatch = movie => {
+    // console.log(movie);
 
+    // const updateWillWatch = [...this.state.moviesWillWatch];
+    // updateWillWatch.push(movie);
+
+    const updateWillWatch = [...this.state.moviesWillWatch, movie];
+
+    // console.log(updateWillWatch);
+    this.setState({
+      moviesWillWatch: updateWillWatch
+    });
   };
 
   render() {
-    console.log(this);
+    // console.log(this);
     return (
       <div className="container">
         <div className="row">
